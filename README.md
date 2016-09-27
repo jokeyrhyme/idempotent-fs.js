@@ -19,18 +19,25 @@ Internally, we use [graceful-fs](https://github.com/isaacs/node-graceful-fs) ins
 ## Usage
 
 
+### `mkdir()` and `mkdirSync()`
+
+See the [upstream `mkdir()` and `mkdirSync`](https://nodejs.org/dist/latest-v6.x/docs/api/fs.html#fs_fs_mkdir_path_mode_callback) "fs" functions in Node.js.
+
+-   **Changed**: No "EEXIST" error. Trying to `mkdir()` a directory that already exists is not an error. Mission accomplished!
+
+
 ### `rmdir()` and `rmdirSync()`
 
 See the [upstream `rmdir()` and `rmdirSync`](https://nodejs.org/dist/latest-v6.x/docs/api/fs.html#fs_fs_rmdir_path_callback) "fs" functions in Node.js.
 
--   **Changed**: No "ENOENT" error. Trying to `rmdir()` a directory that is already gone is no longer an error. Outcome is already accomplished!
+-   **Changed**: No "ENOENT" error. Trying to `rmdir()` a directory that is already gone is no longer an error. Mission accomplished!
 
 
 ### `unlink()` and `unlinkSync()`
 
 See the [upstream `unlink()` and `unlinkSync`](https://nodejs.org/dist/latest-v6.x/docs/api/fs.html#fs_fs_unlink_path_callback) "fs" functions in Node.js.
 
--   **Changed**: No "ENOENT" error. Trying to `unlink()` a file that is already gone is no longer an error. Outcome is already accomplished!
+-   **Changed**: No "ENOENT" error. Trying to `unlink()` a file that is already gone is no longer an error. Mission accomplished!
 
 
 ## Roadmap
@@ -41,4 +48,4 @@ See the [upstream `unlink()` and `unlinkSync`](https://nodejs.org/dist/latest-v6
 
 -   [ ] [`link()`, `symlink()`](https://nodejs.org/dist/latest-v6.x/docs/api/fs.html#fs_fs_link_srcpath_dstpath_callback)
 
--   [ ] [`mkdir()`](https://nodejs.org/dist/latest-v6.x/docs/api/fs.html#fs_fs_mkdir_path_mode_callback)
+-   [ ] [`mkdir()`](https://nodejs.org/dist/latest-v6.x/docs/api/fs.html#fs_fs_mkdir_path_mode_callback) should also test provided mode (if any)
