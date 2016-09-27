@@ -1,35 +1,51 @@
 {
   "name": "idempotent-fs",
-  "version": "1.0.0",
   "description": "`fs.unlink()` that _won't_ throw if the file is missing + other outcome-aware Node.js \"fs\" functions",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "eslint": "eslint --fix --cache .",
-    "flow_check": "flow check || exit 0",
-    "fixpack": "fixpack"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jokeyrhyme/idempotent-fs.js.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
+  "version": "1.0.0",
   "bugs": {
     "url": "https://github.com/jokeyrhyme/idempotent-fs.js/issues"
   },
-  "homepage": "https://github.com/jokeyrhyme/idempotent-fs.js#readme",
-  "engines": {
-    "node": ">=4",
-    "npm": ">=3"
+  "dependencies": {
+    "graceful-fs": "*",
+    "pify": "^2.3.0"
   },
   "devDependencies": {
+    "ava": "^0.16.0",
     "eslint": "^3.6.1",
     "eslint-config-standard": "^6.1.0",
     "eslint-plugin-promise": "^2.0.1",
     "eslint-plugin-standard": "^2.0.0",
     "fixpack": "^2.3.1",
-    "flow-bin": "^0.32.0"
+    "flow-bin": "^0.32.0",
+    "nyc": "^8.3.0"
+  },
+  "engines": {
+    "node": ">=4",
+    "npm": ">=3"
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "homepage": "https://github.com/jokeyrhyme/idempotent-fs.js#readme",
+  "keywords": [
+    "fs",
+    "idempotent",
+    "unlink"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jokeyrhyme/idempotent-fs.js.git"
+  },
+  "scripts": {
+    "ava": "nyc ava",
+    "eslint": "eslint --fix --cache .",
+    "fixpack": "fixpack",
+    "flow_check": "flow check || exit 0",
+    "nyc": "nyc check-coverage --lines 75",
+    "posttest": "npm run eslint && npm run flow_check && npm run fixpack",
+    "test": "npm run ava && npm run nyc"
   }
 }
