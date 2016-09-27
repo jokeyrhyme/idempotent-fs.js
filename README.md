@@ -19,6 +19,13 @@ Internally, we use [graceful-fs](https://github.com/isaacs/node-graceful-fs) ins
 ## Usage
 
 
+### `rmdir()` and `rmdirSync()`
+
+See the [upstream `rmdir()` and `rmdirSync`](https://nodejs.org/dist/latest-v6.x/docs/api/fs.html#fs_fs_rmdir_path_callback) "fs" functions in Node.js.
+
+-   **Changed**: No "ENOENT" error. Trying to `rmdir()` a file that is already gone is no longer an error. Outcome is already accomplished!
+
+
 ### `unlink()` and `unlinkSync()`
 
 See the [upstream `unlink()` and `unlinkSync`](https://nodejs.org/dist/latest-v6.x/docs/api/fs.html#fs_fs_unlink_path_callback) "fs" functions in Node.js.
