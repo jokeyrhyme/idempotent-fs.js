@@ -23,7 +23,7 @@ Internally, we use [graceful-fs](https://github.com/isaacs/node-graceful-fs) ins
 
 See the [upstream `rmdir()` and `rmdirSync`](https://nodejs.org/dist/latest-v6.x/docs/api/fs.html#fs_fs_rmdir_path_callback) "fs" functions in Node.js.
 
--   **Changed**: No "ENOENT" error. Trying to `rmdir()` a file that is already gone is no longer an error. Outcome is already accomplished!
+-   **Changed**: No "ENOENT" error. Trying to `rmdir()` a directory that is already gone is no longer an error. Outcome is already accomplished!
 
 
 ### `unlink()` and `unlinkSync()`
@@ -31,3 +31,14 @@ See the [upstream `rmdir()` and `rmdirSync`](https://nodejs.org/dist/latest-v6.x
 See the [upstream `unlink()` and `unlinkSync`](https://nodejs.org/dist/latest-v6.x/docs/api/fs.html#fs_fs_unlink_path_callback) "fs" functions in Node.js.
 
 -   **Changed**: No "ENOENT" error. Trying to `unlink()` a file that is already gone is no longer an error. Outcome is already accomplished!
+
+
+## Roadmap
+
+-   [ ] [`chmod()`, `fchmod()`, `lchmod()`](https://nodejs.org/dist/latest-v6.x/docs/api/fs.html#fs_fs_chmod_path_mode_callback) ??
+
+-   [ ] [`chown()`, `fchown()`, `lchown()`](https://nodejs.org/dist/latest-v6.x/docs/api/fs.html#fs_fs_chown_path_uid_gid_callback) ??
+
+-   [ ] [`link()`, `symlink()`](https://nodejs.org/dist/latest-v6.x/docs/api/fs.html#fs_fs_link_srcpath_dstpath_callback)
+
+-   [ ] [`mkdir()`](https://nodejs.org/dist/latest-v6.x/docs/api/fs.html#fs_fs_mkdir_path_mode_callback)
