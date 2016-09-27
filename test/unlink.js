@@ -4,20 +4,12 @@ const path = require('path')
 
 const test = require('ava')
 
+const asyncHelper = require('./helpers/async.js')
 const lib = require('../index.js')
 
 const MISSING_FILE = path.join(__dirname, 'file-that-does-not-exist.js')
 
-test.cb('unlink() on missing file', (t) => {
-  lib.unlink(MISSING_FILE, (err) => {
-    t.ifError(err)
-    t.end()
-  })
-})
-
-test('unlink() on missing file', (t) => {
-  return lib.unlink(MISSING_FILE)
-})
+asyncHelper.assertAsyncNoError(test, lib.unlink, [ MISSING_FILE ], 'unlink() on missing file')
 
 test('unlinkSync() on missing file', (t) => {
   t.notThrows(() => {
@@ -27,17 +19,7 @@ test('unlinkSync() on missing file', (t) => {
 
 const DIRECTORY_PATH = __dirname
 
-test.cb('unlink() on directory instead of file', (t) => {
-  lib.unlink(DIRECTORY_PATH, (err) => {
-    t.truthy(err)
-    t.end()
-  })
-})
-
-test('unlink() on directory instead of file', (t) => {
-  return lib.unlink(DIRECTORY_PATH)
-    .then(() => t.fail('should reject'), () => t.pass('does reject'))
-})
+asyncHelper.assertAsyncError(test, lib.unlink, [ DIRECTORY_PATH ], 'unlink() on directory instead of file')
 
 test('unlinkSync() on directory instead of file', (t) => {
   t.throws(() => {
