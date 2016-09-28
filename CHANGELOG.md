@@ -4,6 +4,13 @@
 ## Unreleased
 
 
+### Fixed
+
+-   `mkdir()` results in an "EEXIST" error if the existing path is a file
+
+    -   no "EEXIST" error if the existing path is a directory
+
+
 ## 1.1.0 - 2016-09-28
 
 
