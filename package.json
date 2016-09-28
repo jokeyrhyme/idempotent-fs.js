@@ -1,6 +1,6 @@
 {
   "name": "idempotent-fs",
-  "description": "`fs.unlink()` that _won't_ throw if the file is missing + other outcome-aware Node.js \"fs\" functions",
+  "description": "fs.unlink() that won't throw if the file is missing + other outcome-aware Node.js fs functions",
   "version": "1.1.0",
   "bugs": {
     "url": "https://github.com/jokeyrhyme/idempotent-fs.js/issues"
