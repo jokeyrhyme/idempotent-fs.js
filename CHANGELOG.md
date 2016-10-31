@@ -4,6 +4,9 @@
 ## Unreleased
 
 
+## 1.2.0 - 2016-10-31
+
+
 ### Changed
 
 -   `mkdir()` now internally uses [mkdirp](https://github.com/substack/node-mkdirp)
