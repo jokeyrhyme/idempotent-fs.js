@@ -2,6 +2,7 @@
   "name": "idempotent-fs",
   "description": "fs.unlink() that won't throw if the file is missing + other outcome-aware Node.js fs functions",
   "version": "1.1.0",
+  "author": "Ron Waldon <jokeyrhyme@gmail.com> (https://github.com/jokeyrhyme)",
   "bugs": {
     "url": "https://github.com/jokeyrhyme/idempotent-fs.js/issues"
   },
@@ -12,13 +13,17 @@
   },
   "devDependencies": {
     "ava": "^0.16.0",
-    "eslint": "^3.6.1",
-    "eslint-config-standard": "^6.1.0",
-    "eslint-plugin-promise": "^3.0.0",
-    "eslint-plugin-standard": "^2.0.0",
+    "eslint": "^3.9.0",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-node": "^2.1.3",
+    "eslint-plugin-promise": "^3.3.0",
+    "eslint-plugin-standard": "^2.0.1",
     "fixpack": "^2.3.1",
     "flow-bin": "^0.34.0",
     "nyc": "^8.3.0"
+  },
+  "directories": {
+    "test": "test"
   },
   "engines": {
     "node": ">=4",
@@ -44,7 +49,7 @@
     "ava": "nyc ava",
     "eslint": "eslint --fix --cache .",
     "fixpack": "fixpack",
-    "flow_check": "flow check || exit 0",
+    "flow_check": "flow check",
     "nyc": "nyc check-coverage",
     "posttest": "npm run eslint && npm run flow_check && npm run fixpack",
     "test": "npm run ava && npm run nyc"
