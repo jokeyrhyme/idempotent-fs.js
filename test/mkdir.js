@@ -29,10 +29,10 @@ test('mkdirSync() on existing file', (t) => {
 
 const NESTED_MISSING_DIRECTORY = path.join(__dirname, 'missing', 'missing')
 
-asyncHelper.assertAsyncError(test, lib.mkdir, [ NESTED_MISSING_DIRECTORY ], 'mkdir() on missing directory within missing directory')
+asyncHelper.assertAsyncNoError(test, lib.mkdir, [ NESTED_MISSING_DIRECTORY ], 'mkdir() on missing directory within missing directory')
 
 test('mkdirSync() on missing directory within missing directory', (t) => {
-  t.throws(() => {
+  t.notThrows(() => {
     lib.mkdirSync(NESTED_MISSING_DIRECTORY)
   })
 })

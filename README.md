@@ -25,6 +25,8 @@ See the [upstream `mkdir()` and `mkdirSync`](https://nodejs.org/dist/latest-v6.x
 
 -   **Changed**: No "EEXIST" error. Trying to `mkdir()` a directory that already exists is not an error. Mission accomplished!
 
+-   **Changed**: internally uses [mkdirp](https://github.com/substack/node-mkdirp)
+
 
 ### `rmdir()` and `rmdirSync()`
 

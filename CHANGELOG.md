@@ -4,6 +4,11 @@
 ## Unreleased
 
 
+### Changed
+
+-   `mkdir()` now internally uses [mkdirp](https://github.com/substack/node-mkdirp)
+
+
 ### Fixed
 
 -   `mkdir()` results in an "EEXIST" error if the existing path is a file

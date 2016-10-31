@@ -17,14 +17,22 @@ test('rmdirSync() on missing directory', (t) => {
   })
 })
 
+const FILE_PATH = __filename
 if (process.platform.indexOf('win') !== 0) {
   // https://github.com/nodejs/node/issues/8797
-  const FILE_PATH = __filename
 
   asyncHelper.assertAsyncError(test, lib.rmdir, [ FILE_PATH ], 'rmdir() on file instead of directory')
 
   test('rmdirSync() on file instead of directory', (t) => {
     t.throws(() => {
+      lib.rmdirSync(FILE_PATH)
+    })
+  })
+} else {
+  asyncHelper.assertAsyncNoError(test, lib.rmdir, [ FILE_PATH ], 'rmdir() on file instead of directory')
+
+  test('rmdirSync() on file instead of directory', (t) => {
+    t.notThrows(() => {
       lib.rmdirSync(FILE_PATH)
     })
   })
