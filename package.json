@@ -12,12 +12,13 @@
     "pify": "^2.3.0"
   },
   "devDependencies": {
-    "ava": "^0.18.0",
-    "eslint": "^3.12.1",
-    "eslint-config-standard": "^8.0.0",
-    "eslint-plugin-node": "^4.0.0",
-    "eslint-plugin-promise": "^3.4.0",
-    "eslint-plugin-standard": "^2.0.1",
+    "ava": "^0.19.0",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
     "fixpack": "^2.3.1",
     "flow-bin": "^0.47.0",
     "nyc": "^10.0.0"
@@ -50,8 +51,9 @@
     "eslint": "eslint --fix --cache .",
     "fixpack": "fixpack",
     "flow_check": "flow check",
-    "nyc": "nyc check-coverage --lines 85",
-    "posttest": "npm run eslint && npm run flow_check && npm run fixpack",
+    "nyc": "nyc check-coverage",
+    "posttest": "npm run eslint && npm run flow_check",
+    "pretest": "npm run fixpack",
     "test": "npm run ava && npm run nyc"
   }
 }

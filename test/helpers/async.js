@@ -23,7 +23,7 @@ function assertAsyncNoError (test, fn, args, msg) {
   })
 
   test(`${msg} (promise)`, (t) => {
-    return fn.apply(null, args)
+    return fn.apply(null, args).then(() => t.pass())
   })
 }
 
