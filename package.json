@@ -7,7 +7,7 @@
     "url": "https://github.com/jokeyrhyme/idempotent-fs.js/issues"
   },
   "dependencies": {
-    "graceful-fs": "4.1.11",
+    "graceful-fs": "4.1.13",
     "mkdirp": "^0.5.1",
     "pify": "^3.0.0"
   },
