@@ -9,7 +9,7 @@
   "dependencies": {
     "graceful-fs": "4.1.11",
     "mkdirp": "^0.5.1",
-    "pify": "^3.0.0"
+    "pify": "^5.0.0"
   },
   "devDependencies": {
     "ava": "^0.18.0",
